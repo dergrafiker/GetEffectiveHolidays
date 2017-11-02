@@ -3,6 +3,7 @@ package groovytest
 import de.jollyday.Holiday
 import de.jollyday.HolidayCalendar
 import de.jollyday.HolidayManager
+import de.jollyday.ManagerParameters
 
 import java.time.DayOfWeek
 import java.time.LocalDate
@@ -14,7 +15,7 @@ import java.time.temporal.ChronoField
 class GetEffectiveHolidays {
 
     public static void main(String[] args) {
-        def manager = HolidayManager.getInstance(HolidayCalendar.GERMANY)
+        def manager = HolidayManager.getInstance(ManagerParameters.create(HolidayCalendar.GERMANY))
         def workDays = { Holiday holiday ->
             def dayOfWeek = DayOfWeek.of(holiday.getDate().get(ChronoField.DAY_OF_WEEK))
             (DayOfWeek.MONDAY.ordinal()..DayOfWeek.FRIDAY.ordinal()).contains(dayOfWeek.ordinal())
