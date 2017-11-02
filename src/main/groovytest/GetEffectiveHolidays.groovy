@@ -9,7 +9,7 @@ import java.time.LocalDate
 import java.time.temporal.ChronoField
 
 @Grapes([
-        @Grab(group = 'de.jollyday', module = 'jollyday', version = '0.5.1')
+        @Grab(group = 'de.jollyday', module = 'jollyday', version = '0.5.2')
 ])
 class GetEffectiveHolidays {
 
